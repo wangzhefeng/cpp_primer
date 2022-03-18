@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+
+<html lang="zn_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ 编译 &#8212; cpp 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.C++ 开始" href="cpp_helloworld.html" />
+    <link rel="prev" title="C++ 环境" href="envs.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="c">
+<h1>C++ 编译<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>1.操作系统与编译器<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>编译器</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>2.编译<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>2.1 程序源文件命名约定<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.cc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.cxx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.cpp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.cp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.C</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>2.1 从命令行运行编译器<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>在不同操作系统和编译器系统中, 运行 C++ 编译器的命令也各不相同, 最常用的编译器是 GUN 编译器和微软的 Visual Studio 编译器</p>
+<blockquote>
+<div><ul>
+<li><p>默认情况下, 运行 GNU 编译器的命令是 <code class="docutils literal notranslate"><span class="pre">g++</span></code></p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ g++ -o prog prog.cc
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">prog</span></code> 是编译器参数, 指定了可执行文件的文件名.
+如果不省略该参数, 在 Windows 中生成 <code class="docutils literal notranslate"><span class="pre">prog.exe</span></code> 文件; 在 UNIX 系统中生成 <code class="docutils literal notranslate"><span class="pre">prog</span></code> 文件;
+如果省略该参数, 在 Windows 中生成 <code class="docutils literal notranslate"><span class="pre">prog.exe</span></code> 文件; 在 UNIX 系统中生成 <code class="docutils literal notranslate"><span class="pre">prog.out</span></code> 文件</p></li>
+<li><p>根据使用的 GNU 编译器的版本, 可能需要指定 <code class="docutils literal notranslate"><span class="pre">-std=c++0x</span></code> 参数来打开对 C++11 的支持</p></li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+<li><p>Windows</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ CC prog.cc
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">CC</span></code> 是编译器程序的名字, 编译器生成一个可执行文件, Windows 系统会将这个可执行文件命名为 <code class="docutils literal notranslate"><span class="pre">prog.ext</span></code></p></li>
+<li><p>Windows 系统中运行一个可执行文件需要提供可执行文件的文件名, 可以省略其扩展名</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ prog
+$ .<span class="se">\p</span>rog
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Windows 系统中访问 main 返回值, 执行完一个程序后, 可以通过 <code class="docutils literal notranslate"><span class="pre">echo</span></code> 命令获得其返回值</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> %ERRORLEVEL%
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>UNIX</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ CC prog.cc
+$ g++ -o compiled_file compile_file.cc
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">CC</span></code> 是编译器程序的名字, 编译器生成一个可执行文件, UNIX 系统会将这个可执行文件命名为 <code class="docutils literal notranslate"><span class="pre">prog.out</span></code></p></li>
+<li><p>UNIX 系统中运行一个可执行文件需要使用全文件名, 包括文件扩展名</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ prog.out
+$ ./prog.out
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>UNIX 系统中访问 main 返回值, 执行完一个程序后, 可以通过 <code class="docutils literal notranslate"><span class="pre">echo</span></code> 命令获得其返回值</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>从键盘输入文件结束符</p>
+<ul>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">Ctrl+z</span></code> + <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
+<li><p>UNIX: <code class="docutils literal notranslate"><span class="pre">Ctrl+d</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ide">
+<h3>2.2 IDE 运行编译器<a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p>运行 Visual Studio 2010 编译器的命令是 <code class="docutils literal notranslate"><span class="pre">cl</span></code>:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\m</span>e<span class="se">\P</span>rograms&gt; cl /EHsc prog.cc
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cl</span></code> 是编译器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/EHsc</span></code> 是编译器选项, 用来打开标准异常处理</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">cpp</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="envs.html">C++ 环境</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C++ 编译</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.操作系统与编译器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.编译</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_helloworld.html">1.C++ 开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable_and_base_type.html">2.变量和基本类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">7.C++ 类</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function.html">6.C++ 函数</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="envs.html" title="previous chapter">C++ 环境</a></li>
+      <li>Next: <a href="cpp_helloworld.html" title="next chapter">1.C++ 开始</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, wangzf.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/compile.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
